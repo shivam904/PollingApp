@@ -1,0 +1,21 @@
+
+services:
+  - type: web
+    name: polling-app
+    env: java
+    plan: free
+    buildCommand: "./mvnw clean install -DskipTests"
+    startCommand: "java -jar target/*.jar"
+    envVars:
+      - key: JDK_VERSION
+        value: 20
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DATABASE_URL
+        value: jdbc:postgresql://dpg-d2u0tep5pdvs73a0mru0-a.singapore-postgres.render.com/pollingapp
+      - key: DATABASE_USER
+        value: <username>
+      - key: DATABASE_PASSWORD
+        value: <password>
+      - key: FRONT_END
+        value: http://localhost:5173
