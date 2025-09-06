@@ -2,7 +2,7 @@
 services:
   - type: web
     name: polling-app
-    env: java
+    runtime: java
     plan: free
     buildCommand: "./mvnw clean install -DskipTests"
     startCommand: "java -jar target/*.jar"
